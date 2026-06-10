@@ -1,0 +1,15 @@
+{
+  "total_chunks": 4896,
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "embedding_dimension": 384,
+  "chunk_size": 500,
+  "chunk_overlap": 100,
+  "pdfs_processed": [
+    "Document from Deepraj (1).pdf",
+    "Document from Deepraj.pdf",
+    "ETM STAMP VOL I.pdf",
+    "Document from Deepraj (2).pdf",
+    "Document from Deepraj (3).pdf"
+  ],
+  "faiss_index_type": "IndexFlatIP (cosine similarity)"
+}
