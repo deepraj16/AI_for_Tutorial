@@ -9,7 +9,7 @@ import streamlit as st
 # PAGE CONFIG
 # ─────────────────────────────────────────
 st.set_page_config(
-    page_title="MSEB Assistant",
+    page_title="PowerMitra GPT",
     page_icon="⚡",
     layout="centered",
     initial_sidebar_state="auto",
@@ -27,7 +27,7 @@ def load_rag():
 # LOADING SCREEN
 # ─────────────────────────────────────────
 if "rag_ready" not in st.session_state:
-    st.title("⚡ MSEB Assistant")
+    st.title("⚡ PowerMitra GPT")
     st.info("Initializing knowledge base... Please wait.")
     with st.status("Loading RAG System Components...", expanded=True) as status:
         st.write("Connecting to Mistral AI and loading embeddings...")
@@ -55,7 +55,7 @@ if "messages" not in st.session_state:
 #  LEFT SIDEBAR
 # ═══════════════════════════════
 with st.sidebar:
-    st.title("⚡ MSEB Assistant")
+    st.title("⚡ PowerMitra GPT")
     st.caption("RAG-powered document Q&A")
     st.divider()
 
@@ -86,7 +86,7 @@ with st.sidebar:
 # ═══════════════════════════════
 
 # ── Header bar ──
-st.markdown("<h1 style='text-align: center;'>⚡ MSEB Assistant</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>⚡ PowerMitra GPT</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center; color: gray;'>Ask questions in the chatbox below.</p>", unsafe_allow_html=True)
 st.write("")
 
