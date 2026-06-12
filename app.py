@@ -87,7 +87,7 @@ with st.sidebar:
 # ═══════════════════════════════
 
 # ── Header bar ──
-st.markdown("<h1 style='text-align: center;'>⚡ TransGuru</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>⚡TransGuru</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center; color: gray;'>Ask questions in the chatbox below.</p>", unsafe_allow_html=True)
 st.write("")
 
