@@ -4,6 +4,15 @@ Run with: streamlit run app.py
 """
 
 import streamlit as st
+import base64
+import os
+
+def get_image_base64(path):
+    if os.path.exists(path):
+        with open(path, "rb") as f:
+            return base64.b64encode(f.read()).decode()
+    return ""
+
 
 # ─────────────────────────────────────────
 # PAGE CONFIG
@@ -87,9 +96,26 @@ with st.sidebar:
 # ═══════════════════════════════
 
 # ── Header bar ──
-st.markdown("<h1 style='text-align: center;'>⚡TransGuru</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: gray;'>Ask questions in the chatbox below.</p>", unsafe_allow_html=True)
+pslc_logo_b64 = get_image_base64("PSLC logo.png")
+
+header_html = f"""
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 20px; width: 100%;">
+    <div style="flex: 0 0 auto; visibility: hidden;">
+        <img src="data:image/png;base64,{pslc_logo_b64}" style="height: 60px; max-width: 100%; object-fit: contain;">
+    </div>
+    <div style="flex: 1 1 auto; text-align: center;">
+        <h1 style="margin: 0; font-size: 2.2rem; font-weight: 700; font-family: 'Inter', sans-serif; color: inherit;">⚡TransGuru</h1>
+        <p style="margin: 5px 0 0 0; font-size: 1rem; color: inherit; opacity: 0.7;">Ask questions in the chatbox below.</p>
+    </div>
+    <div style="flex: 0 0 auto;">
+        <img src="data:image/png;base64,{pslc_logo_b64}" style="height: 60px; max-width: 100%; object-fit: contain; filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.15));">
+    </div>
+</div>
+"""
+
+st.markdown(header_html, unsafe_allow_html=True)
 st.write("")
+
 
 # ── Empty state with suggestion buttons ──
 if not st.session_state.messages:
